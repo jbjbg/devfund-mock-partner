@@ -7,10 +7,10 @@ const uuid = require('uuid');
 
 app.use(express.json());
 
-app.get('/', (err, req, res) => {
+app.get('/', (err, req, res, next) => {
   if(err) {
     // res.error(503);
-    throw err;
+    return next(err);
   }
   let id = uuid();
   res.json(id);

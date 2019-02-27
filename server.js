@@ -7,20 +7,23 @@ const uuid = require('uuid');
 
 app.use(express.json());
 
-app.get('/', (err, req, res, next) => {
-  if(err) {
-    // res.error(503);
-    return next(err);
-  }
+app.get('/', (req, res) => {
   let id = uuid();
   res.json(id);
 });
 
+app.get('*', (req,res) => {
+  res.status(404);
+  res.statusMessage = 'Not found';
+});
 
+app.use( (err, req, res, next) => {
+  res.status(500);
+  res.statusMessage = 'Server Error';
+});
 module.exports = {
   server: app,
-  start: () => {
-    const PORT = process.env.port || 3030;
-    app.listen(PORT, () => console.log(`Server up on port ${PORT}`));
+  start: (port) => {
+    app.listen(port, () => console.log(`Server up on port ${port}`));
   },
 };

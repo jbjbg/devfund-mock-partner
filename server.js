@@ -19,8 +19,7 @@ app.get('/', (err, req, res) => {
 
 module.exports = {
   server: app,
-  start: () => {
-    const PORT = process.env.PORT || 3030;
-    app.listen(PORT, () => console.log(`Server up on port ${PORT}`));
+  start: (port) => {
+    app.listen(port, () => console.log(`Server up on port ${port}`));
   },
 };

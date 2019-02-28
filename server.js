@@ -8,10 +8,8 @@ const uuid = require('uuid');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  console.log('in app.get /');
   let id = uuid();
-  // res.json(id);
-  res.send('hello');
+  res.json(id);
 });
 
 app.get('*', (req,res) => {

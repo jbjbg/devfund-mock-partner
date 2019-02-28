@@ -9,7 +9,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   let id = uuid();
-  res.json(id);
+  // res.json(id);
+  res.send('hello');
 });
 
 app.get('*', (req,res) => {

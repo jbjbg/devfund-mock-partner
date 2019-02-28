@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   let id = uuid();
   // res.json(id);
   res.send('hello');
-}).catch(console.log('inside catch'));
+});
 
 app.get('*', (req,res) => {
   res.status(404);

@@ -12,7 +12,7 @@
 The DevFund project is a proof-of-concept for a site that helps fund learning resources for new developers looking to break into the industry. It's an easy way for new devs to request the resources they need to learn to code, and for folks looking to give back to help fund them. DevFund was built to help grow the developer community and make giving back to it a little easier.
 
 ## Technology Used 
-Express, uuid
+Express, nodeJS
 
 ### Modules
 #### `index.js`
